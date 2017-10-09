@@ -1,5 +1,4 @@
 <p id="notice"><%= notice %></p>
-
 <h1>Photos</h1>
 
 <table>
@@ -15,7 +14,7 @@
   <tbody>
     <% @photos.each do |photo| %>
       <tr>
-        <td><%= photo.image_data %></td>
+        <td><img src="<%= photo.image_url %>"></td>
         <td><%= photo.user %></td>
         <td><%= photo.caption %></td>
         <td><%= link_to 'Show', photo %></td>

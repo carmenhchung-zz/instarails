@@ -1,0 +1,6 @@
+<div>
+  <% if photo.image_data? %>
+    <%= image_tag photo.image_url %>
+  <% end %>
+  <p><%= photo.title %> | <%= link_to 'Edit', edit_photo_path(photo) %></p>
+</div>
