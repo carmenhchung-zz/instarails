@@ -1,0 +1,15 @@
+<h1> Photo Comments </h1>
+<%= image_tag @photo.image_url, width: 200 %>
+<% @comments.each do |comment| %>
+<br>
+  @<%= comment.user.username %>: <%= comment.content %>
+</br>
+<% end %>
+
+<%= form_with(model: [@photo, @comment], local: true) do |form| %>
+  <div class= "form-group">
+    <%= form.label :content %>
+    <%= form.text_area :content, class: 'form-control' %>
+    <%= form.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>

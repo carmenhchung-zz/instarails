@@ -1,5 +1,9 @@
-<% if user_signed_in? %>
-  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-<% else %>
-  <%= link_to('Login', new_user_session_path)  %>
-<% end %>
+<nav class="navbar navbar-light">
+  <a class="navbar-brand" href="index#home">Home</a>
+      <a class="nav-item nav-link active" href="index#profile">Profile <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="#"><% if user_signed_in? %>
+        <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+      <% else %>
+        <%= link_to('Login', new_user_session_path)  %>
+      <% end %></a>
+</nav>
