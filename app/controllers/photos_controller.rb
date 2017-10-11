@@ -10,6 +10,7 @@ class PhotosController < ApplicationController
   # GET /photos/1
   # GET /photos/1.json
   def show
+    @photo = Photo.find(params[:id])
   end
 
   # GET /photos/new
@@ -25,7 +26,7 @@ class PhotosController < ApplicationController
   # POST /photos.json
   def create
     @photo = Photo.new(photo_params)
-    @photo.user = current_user
+    @photo.user = current_user #devise method
     if @photo.save
         flash[:success] = 'Photo added!'
         redirect_to photos_path
