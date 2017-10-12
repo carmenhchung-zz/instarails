@@ -12,8 +12,6 @@ class CommentsController < ApplicationController
     @comment.user = current_user #devise method
     if @comment.save
         flash[:success] = 'Comment added!'
-        redirect_to photo_comments_path
-    else
         redirect_to root_path
     end
   end

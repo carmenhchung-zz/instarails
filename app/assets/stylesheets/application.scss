@@ -1,12 +1,32 @@
 @import "bootstrap";
 
-.thumbnail {
-  margin: auto;
+.center {
+  text-align: center;
+  vertical-align: middle;
+  margin: 0 auto;
 }
 
-.card-block {
+.logo {
+  width: 10%;
+}
+
+.icons {
+  width: 5%;
+}
+
+.card {
+  width: 70%;
+}
+
+.profile {
   width: 50%;
 }
+
+.form-control {
+  width: 70%;
+  margin: 0 auto;
+}
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
