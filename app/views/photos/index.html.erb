@@ -1,7 +1,6 @@
 <%= render 'layouts/nav' %>
 <p id="notice"><%= notice %></p>
 <div class="jumbotron jumbotron-fluid">
-
     <div class="card center">
       <% @photos.each do |photo| %>
         <div class="card-header">
@@ -12,21 +11,21 @@
           <img class= "thumbnail" src="<%= photo.image_url %>">
         </a>
         <br>
-          <strong><%= current_user.username %>:</strong>  <%= photo.caption %>
+          <strong><%= link_to "#{photo.user.username} ", user_path(photo.user_id) %></strong>  <%= "#{photo.caption}" %>
         </br>
         <br>
-          <img class= "icons" src="https://imageog.flaticon.com/icons/png/512/14/14949.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF">
-          <img class="icons" src="https://d30y9cdsu7xlg0.cloudfront.net/png/124237-200.png">
+          <%= link_to image_tag('heart.svg') %>
+          <%= link_to image_tag('comment.svg') %>
         </br>
             <% photo.comments.each do |comment| %>
             <p>
-              <strong><%= comment.user.username %>: </strong><%= comment.content %>
+              <strong> <%= link_to "#{comment.user.username} ", user_path(comment.user_id) %> </strong><%= comment.content %>
             </p>
             <% end %>
 
             <%= form_for [photo, photo.comments.new] do |form| %>
               <div class= "form-group">
-                <%= form.text_area :content, class: 'form-control' %>
+                <%= form.text_area :content, class: 'form-control', placeholder: 'Enter Your Comment.' %>
                 <br>
                 <%= form.submit :Post, class: 'btn btn-basic' %>
                 </br>

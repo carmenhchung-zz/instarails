@@ -1,17 +1,10 @@
-<nav class="navbar navbar-light center">
-  <div class="container">
-  <a class="navbar-brand" href="photos#index">
-    <img class = "logo" src="https://www.seeklogo.net/wp-content/uploads/2016/05/instagram-icon-logo-vector-download.jpg">
-  </a>
-  <a class="nav-item nav-link active" href="index#profile">
-    <%= image_tag("profile.png", class: "profile") %>
-  </a>
-  <a class="nav-item nav-link" href="#">
+<nav class="navbar sticky-top navbar-light bg-white">
+    <%= link_to image_tag("logo.svg"), photos_path %>
+    <%= link_to image_tag("profile.svg"), profile_path %>
+    <%= link_to image_tag("add_icon.svg"), new_photo_path %>
     <% if user_signed_in? %>
-      <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+    <%= link_to image_tag("logout.svg"), destroy_user_session_path, method: :delete %>
     <% else %>
       <%= link_to('Login', new_user_session_path)  %>
     <% end %>
-  </a>
-  </div>
 </nav>
