@@ -1,24 +1,15 @@
-# README
+# INSTARAILS - Version 1
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Task
 
-Things you may want to cover:
+We were asked to build a web application using Ruby on Rails that is similar to Instagram, without the use of scaffolding (or over reliance upon gems).
 
-* Ruby version
+## Synopsis
 
-* System dependencies
+Initially, the gem [acts-as-voteable](https://github.com/ryanto/acts_as_votable) was used to implement the liking function (i.e. how users would like other user's photos). When asked to re-do the application without the use of the gem, the focus was on commenting on (rather than liking) photos.
 
-* Configuration
+Currently, the application allows you to create an account and sign in (using the devise gem), upload photos, edit old photos, comment on other's photos, and create a profile page.
 
-* Database creation
+## Further Work
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The liking function needs to be implemented again without the use of a gem.
