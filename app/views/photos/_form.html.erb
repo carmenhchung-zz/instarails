@@ -3,7 +3,6 @@
   <% if photo.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
-
       <ul>
       <% photo.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -13,17 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :image_data %>
+    <%= form.label :Image %>:
     <%= form.file_field :image, id: :photo_image_data %>
   </div>
 
   <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id, id: :photo_user_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :caption %>
+    <%= form.label :Caption %>:
     <%= form.text_field :caption, id: :photo_caption %>
   </div>
 

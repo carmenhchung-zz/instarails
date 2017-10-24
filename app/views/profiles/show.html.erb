@@ -1,0 +1,17 @@
+<%= render 'layouts/nav' %>
+  <div class="card center">
+    <h1><strong>Profile of <%= @profile.user.username %></strong></h1>
+    <p><strong>Name: <%= @profile.firstname %> </strong></p>
+    <p><strong>Bio:</strong></p>
+    <p><%= @profile.bio %></p>
+    <% if @profile.user == current_user %>
+      <% link_to 'Edit', edit_profile_path(@profile) %>
+    <% else %>
+      <%= form_with(model: @profile.user, method: :patch) do |form| %>
+        <%= form.hidden_field :toggle_follow, value: true %>
+        <%= form.button 'Click Me', class:
+        'btn btn-secondary' %>
+    <% end %>
+    
+  </div>
+<% end %>

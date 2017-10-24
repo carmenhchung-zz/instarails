@@ -1,0 +1,14 @@
+<h2>Contact Page</h2>
+
+<%= form_for(:email) do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :email %>
+  <%= form.text_field :email %>
+
+  <%= form.label :message %>
+  <%= form.text_area :message %>
+
+  <%= form.submit "Send Message" %>
+<% end %>

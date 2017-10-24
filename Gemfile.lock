@@ -76,6 +76,10 @@ GEM
       railties (>= 4.1.0, < 5.2)
       responders
       warden (~> 1.2.3)
+    dotenv (2.2.1)
+    dotenv-rails (2.2.1)
+      dotenv (= 2.2.1)
+      railties (>= 3.2, < 5.2)
     down (4.1.0)
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
@@ -237,6 +241,7 @@ DEPENDENCIES
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
   devise
+  dotenv-rails
   guard-livereload
   jbuilder (~> 2.5)
   jquery-rails
